@@ -1,0 +1,41 @@
+Solar Flare dataset
+
+1: Description.
+
+The database describes (using 11 attributes) certain types of solar flares occured in a 24 hour period. Each instance represents captured features for 1 active region on the sun. 
+
+Attributes description: 
+1. LargestSpotSize: Code for largest spot size (X,R,S,A,H,K) 
+2. SpotDistribution: Code for spot distribution (X,O,I,C) 
+3. Activity (1 = reduced, 2 = unchanged) 
+4. Evolution (1 = decay, 2 = no growth, 3 = growth) 
+5. Prev24Hour: Previous 24 hour flare activity code (1 = nothing as big as an M1, 2 = one M1, 3 = more activity than one M1) 
+6. HistComplex: Historically-complex (1 = Yes, 2 = No) 
+7. BecomeHist: Did region become historically complex on this pass across the sun's disk (1 = yes, 2 = no) 
+8. Area (1 = small, 2 = large) 
+9. C-class: flares production by this region in the following 24 hours (common flares). 
+10. M-class: flares production by this region in the following 24 hours (moderate flares). 
+11. X-class: flares production by this region in the following 24 hours (severe flares).
+
+2: Type.			Unsupervised
+3: Origin.			Real world
+4: Instances.		1066
+5: Features.		11
+6: Missing values.	No
+
+7: Header.
+
+@relation flare
+@attribute LargestSpotSize {A, R, S, X, K, H}
+@attribute SpotDistribution {X, O, I, C}
+@attribute Activity {1, 2}
+@attribute Evolution {1, 2, 3}
+@attribute Prev24Hour {1, 2, 3}
+@attribute HistComplex {1, 2}
+@attribute BecomeHist {1, 2}
+@attribute Area {1, 2}
+@attribute C-class {0, 1, 2, 3, 4, 5, 6, 7, 8}
+@attribute M-class {0, 1, 2, 3, 4, 5}
+@attribute X-class {0, 1, 2}
+@attribute Class {H, D, C, B, E, F}
+@inputs LargestSpotSize, SpotDistribution, Activity, Evolution, Prev24Hour, HistComplex, BecomeHist, Area, C-class, M-class, X-class, Class
